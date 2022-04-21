@@ -1,0 +1,29 @@
+{
+  "name": "jaxon-php/jaxon-demo-slim",
+  "type": "application",
+  "description": "Demo of Jaxon integration for the Slim framework",
+  "authors": [
+    {"name": "Thierry Feuzeu"}
+  ],
+  "homepage": "https://github.com/jaxon-php/jaxon-demo-slim",
+  "license": "BSD-3-Clause",
+  "keywords": ["Jaxon", "Ajax", "PHP", "Slim"],
+  "support": {
+    "issues": "https://github.com/jaxon-php/jaxon-demo-slim/issues",
+    "source": "https://github.com/jaxon-php/jaxon-demo-slim"
+  },
+  "require": {
+    "slim/slim": "4.*",
+    "slim/psr7": "1.*",
+    "slim/twig-view": "3.*",
+    "jaxon-php/jaxon-slim": "^4.0",
+    "jaxon-php/jaxon-dialogs": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jaxon\\Demo\\Ajax\\": "jaxon/ajax/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
