@@ -50,13 +50,13 @@
     /* <![CDATA[ */
     window.onload = function() {
         // call the helloWorld function to populate the div on load
-        {{ pgw.sayHello(0, false) }};
+        {{ pgw.sayHello(0) }};
         // call the setColor function on load
-        {{ pgw.setColor(pm.select('colorselect1'), false)|raw }};
+        {{ pgw.setColor(pm.select('colorselect1'))|raw }};
         // Call the HelloWorld class to populate the 2nd div
-        {{ bts.sayHello(0, false) }};
+        {{ bts.sayHello(0) }};
         // call the HelloWorld->setColor() method on load
-        {{ bts.setColor(pm.select('colorselect2'), false)|raw }};
+        {{ bts.setColor(pm.select('colorselect2'))|raw }};
     }
     /* ]]> */
 </script>
