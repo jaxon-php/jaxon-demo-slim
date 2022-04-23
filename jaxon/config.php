@@ -1,5 +1,8 @@
 <?php
 
+use Jaxon\Demo\Service\Example;
+use Jaxon\Demo\Service\ExampleInterface;
+
 return [
     'app' => [
         'directories' => [
@@ -8,6 +11,14 @@ return [
                 'register' => false,
                 // 'separator' => '', // '.' or '_'
                 // 'protected' => [],
+            ],
+        ],
+        'container' => [
+            'auto' => [
+                Example::class,
+            ],
+            'alias' => [
+                ExampleInterface::class => Example::class
             ],
         ],
     ],
