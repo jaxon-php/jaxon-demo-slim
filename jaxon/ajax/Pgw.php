@@ -3,12 +3,20 @@
 namespace Jaxon\Demo\Ajax;
 
 use Jaxon\App\CallableClass as JaxonClass;
+use Jaxon\Demo\Service\ExampleInterface;
 
 class Pgw extends JaxonClass
 {
+    protected $example;
+
+    public function __construct(ExampleInterface $example)
+    {
+        $this->example = $example;
+    }
+
     public function sayHello($isCaps)
     {
-        $text = $this->view()->render('test/hello', ['isCaps' => $isCaps]);
+        $text = $this->example->message($isCaps);
         $this->response->assign('div1', 'innerHTML', $text);
 
         $message = $this->view()->render('test/message', [
@@ -23,6 +31,7 @@ class Pgw extends JaxonClass
 
     public function setColor($sColor)
     {
+        $sColor = $this->example->color($sColor);
         $this->response->assign('div1', 'style.color', $sColor);
 
         $message = $this->view()->render('test/message', [
