@@ -7,13 +7,9 @@ use Jaxon\Demo\Service\ExampleInterface;
 
 class Pgw extends JaxonClass
 {
-    protected $example;
-
-    public function __construct(ExampleInterface $example)
-    {
-        $this->example = $example;
-    }
-
+    /**
+     * @di('attr' => 'example', 'class' => 'App\Service\ExampleInterface')
+     */
     public function sayHello($isCaps)
     {
         $text = $this->example->message($isCaps);
@@ -29,6 +25,9 @@ class Pgw extends JaxonClass
         return $this->response;
     }
 
+    /**
+     * @di('attr' => 'example', 'class' => 'App\Service\ExampleInterface')
+     */
     public function setColor($sColor)
     {
         $sColor = $this->example->color($sColor);
