@@ -73,7 +73,7 @@ $app->group('/', function() use($app) {
             'pageTitle' => "Slim Framework Integration",
             'bts' => $jaxon->request(Bts::class), // Jaxon request to the Bts controller
             'pgw' => $jaxon->request(Pgw::class), // Jaxon request to the Pgw controller
-            'pm' => pm(), // Jaxon Request Factory
+            'pm' => pm(), // Jaxon Parameter Factory
         ]);
     });
 })->add($jaxonConfigMiddleware);
