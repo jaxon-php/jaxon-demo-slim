@@ -11,6 +11,9 @@ use Slim\Psr7\Response;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 
+use function Jaxon\jaxon;
+use function Jaxon\pm;
+
 require __DIR__ . '/../vendor/autoload.php';
 
 $app = AppFactory::create();
