@@ -31,7 +31,8 @@ $jaxonConfigMiddleware = function(Request $request, RequestHandler $handler) {
             $view = Twig::fromRequest($request);
             return new \Jaxon\Slim\View($view);
         })
-        ->config(__DIR__ . '/../jaxon/config.php')->process($request, $handler);
+        ->config(__DIR__ . '/../jaxon/config.php')
+        ->process($request, $handler);
 };
 
 /**
@@ -60,7 +61,7 @@ $app->group('/', function() use($app) {
         // Todo: return an error. Jaxon could not find a plugin to process the request.
     })->add($jaxonAjaxMiddleware);
 
-    // Insert Jaxon codes in a page
+    // Insert Jaxon codes in the page
     $app->get('/', function($request, $response) {
         $jaxon = jaxon()->app();
         // Display the page
@@ -71,9 +72,12 @@ $app->group('/', function() use($app) {
             'jaxonJs' => $jaxon->js(),
             'jaxonScript' => $jaxon->script(),
             'pageTitle' => "Slim Framework Integration",
-            'bts' => $jaxon->request(Bts::class), // Jaxon request to the Bts controller
-            'pgw' => $jaxon->request(Pgw::class), // Jaxon request to the Pgw controller
-            'pm' => pm(), // Jaxon Parameter Factory
+            // Jaxon request to the Bts controller
+            'bts' => $jaxon->request(Bts::class),
+            // Jaxon request to the Pgw controller
+            'pgw' => $jaxon->request(Pgw::class),
+            // Jaxon Parameter Factory
+            'pm' => pm(),
         ]);
     });
 })->add($jaxonConfigMiddleware);
