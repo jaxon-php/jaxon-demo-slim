@@ -16,9 +16,9 @@
     "slim/slim": "4.*",
     "slim/psr7": "1.*",
     "slim/twig-view": "3.*",
-    "jaxon-php/jaxon-slim": "^4.0",
-    "jaxon-php/jaxon-dialogs": "^4.0",
-    "jaxon-php/jaxon-annotations": "^1.2"
+    "jaxon-php/jaxon-slim": "v5.x-dev",
+    "jaxon-php/jaxon-dialogs": "v5.x-dev",
+    "jaxon-php/jaxon-annotations": "v5.x-dev"
   },
   "autoload": {
     "psr-4": {
