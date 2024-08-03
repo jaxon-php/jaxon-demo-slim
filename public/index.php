@@ -1,18 +1,20 @@
 <?php
 
-use Jaxon\Demo\Ajax\Bts;
-use Jaxon\Demo\Ajax\Pgw;
+use Jaxon\Demo\Ajax\App\Test as AppTest;
+use Jaxon\Demo\Ajax\App\Buttons as AppButtons;
+use Jaxon\Demo\Ajax\Ext\Test as ExtTest;
+use Jaxon\Demo\Ajax\Ext\Buttons as ExtButtons;
 use Jaxon\Exception\RequestException;
+use Jaxon\Slim\Helper;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 use Psr\Log\LoggerInterface;
 use Slim\Factory\AppFactory;
-use Slim\Psr7\Response;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 
 use function Jaxon\jaxon;
-use function Jaxon\pm;
+use function Jaxon\rq;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -28,8 +30,7 @@ $jaxonConfigMiddleware = function(Request $request, RequestHandler $handler) {
         // Uncomment the following line to set a logger
         // ->logger($logger)
         ->view('slim', '.html.twig', function() use($request) {
-            $view = Twig::fromRequest($request);
-            return new \Jaxon\Slim\View($view);
+            return Helper::twigView($request);
         })
         ->config(__DIR__ . '/../jaxon/config.php')
         ->process($request, $handler);
@@ -42,7 +43,7 @@ $jaxonConfigMiddleware = function(Request $request, RequestHandler $handler) {
 $app->addRoutingMiddleware();
 
 // Create Twig
-$twig = Twig::create(__DIR__ . '/../templates', ['cache' => false]);
+$twig = Helper::twig(__DIR__ . '/../templates', ['cache' => false]);
 // Add Twig-View Middleware
 $app->add(TwigMiddleware::create($app, $twig));
 
@@ -72,12 +73,10 @@ $app->group('/', function() use($app) {
             'jaxonJs' => $jaxon->js(),
             'jaxonScript' => $jaxon->script(),
             'pageTitle' => "Slim Framework Integration",
-            // Jaxon request to the Bts controller
-            'bts' => $jaxon->request(Bts::class),
-            // Jaxon request to the Pgw controller
-            'pgw' => $jaxon->request(Pgw::class),
-            // Jaxon Parameter Factory
-            'pm' => pm(),
+            'appTest' => rq(AppTest::class),
+            'rqAppButtons' => rq(AppButtons::class),
+            'extTest' => rq(ExtTest::class),
+            'rqExtButtons' => rq(ExtButtons::class),
         ]);
     });
 })->add($jaxonConfigMiddleware);
