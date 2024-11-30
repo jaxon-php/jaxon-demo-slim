@@ -6,7 +6,7 @@
             <div class="col-sm-9 content">
                 <h3 class="page-header">{{ pageTitle }}</h3>
                 <div class="row">
-                    <div class="col-md-12" {{ jxnShow(appTest) }}>
+                    <div class="col-md-12" {{ jxnBind(appTest) }}>
                         Initial content : {{ jxnHtml(appTest) }}
                     </div>
                     <div class="col-md-4 margin-vert-10">
@@ -17,10 +17,10 @@
                             <option value="blue">Blue</option>
                         </select>
                     </div>
-                    <div class="col-md-8 margin-vert-10" {{ jxnShow(rqAppButtons) }}>
+                    <div class="col-md-8 margin-vert-10" {{ jxnBind(rqAppButtons) }}>
                     </div>
 
-                    <div class="col-md-12" {{ jxnShow(extTest) }}>
+                    <div class="col-md-12" {{ jxnBind(extTest) }}>
                         Initial content : {{ jxnHtml(extTest) }}
                     </div>
                     <div class="col-md-4 margin-vert-10">
@@ -31,7 +31,7 @@
                             <option value="blue">Blue</option>
                         </select>
                     </div>
-                    <div class="col-md-8 margin-vert-10" {{ jxnShow(rqExtButtons) }}>
+                    <div class="col-md-8 margin-vert-10" {{ jxnBind(rqExtButtons) }}>
                     </div>
                 </div>
             </div> <!-- class="content" -->
