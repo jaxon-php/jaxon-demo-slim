@@ -7,6 +7,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+    {# <meta name="csrf-token" content=""> #}
+    <link rel="icon" href="/favicon.ico" />
 
     <title>Jaxon Examples</title>
 
@@ -16,7 +18,14 @@
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet" />
 
-{{ jaxonCss|raw }}
+{{ jxnCss() }}
 </head>
 
 <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Jaxon Examples</a>
+            </div>
+        </div>
+    </nav>

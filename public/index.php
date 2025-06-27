@@ -1,9 +1,9 @@
 <?php
 
-use Jaxon\Demo\Ajax\App\Test as AppTest;
-use Jaxon\Demo\Ajax\App\Buttons as AppButtons;
-use Jaxon\Demo\Ajax\Ext\Test as ExtTest;
-use Jaxon\Demo\Ajax\Ext\Buttons as ExtButtons;
+use Demo\Ajax\App\Test as AppTest;
+use Demo\Ajax\App\Buttons as AppButtons;
+use Demo\Ajax\Ext\Test as ExtTest;
+use Demo\Ajax\Ext\Buttons as ExtButtons;
 use Jaxon\Exception\RequestException;
 use Jaxon\Slim\Helper;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -13,28 +13,25 @@ use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 
-use function Jaxon\jaxon;
-use function Jaxon\rq;
-
 require __DIR__ . '/../vendor/autoload.php';
 
 $app = AppFactory::create();
 
+// Always load the Jaxon global functions.
+jaxon()->setAppOption('helpers.global', true);
+
 // Jaxon middleware to load config
 // Set a container if you need to use its services in Jaxon classes.
 // Set a logger if you need to send messages to your logs in Jaxon classes.
-$jaxonConfigMiddleware = function(Request $request, RequestHandler $handler) {
-    return jaxon()->psr()
+$jaxonConfigMiddleware = fn(Request $request, RequestHandler $handler) =>
+    jaxon()->psr()
         // Uncomment the following line to set a container
         // ->container($container)
         // Uncomment the following line to set a logger
         // ->logger($logger)
-        ->view('slim', '.html.twig', function() use($request) {
-            return Helper::twigView($request);
-        })
-        ->config(__DIR__ . '/../jaxon/config.php')
+        ->view('slim', '.html.twig', fn() => Helper::twigView($request))
+        ->config(__DIR__ . '/../config/jaxon.php')
         ->process($request, $handler);
-};
 
 /**
  * The routing middleware should be added earlier than the ErrorMiddleware
@@ -54,9 +51,8 @@ $app->group('/', function() use($app) {
      *
      * @throws RequestException
      */
-    $jaxonAjaxMiddleware = function(Request $request, RequestHandler $handler) {
-        return jaxon()->psr()->ajax()->process($request, $handler);
-    };
+    $jaxonAjaxMiddleware = fn(Request $request, RequestHandler $handler) =>
+        jaxon()->psr()->ajax()->process($request, $handler);
 
     $app->post('/jaxon', function($request, $response) {
         // Todo: return an error. Jaxon could not find a plugin to process the request.
@@ -64,18 +60,14 @@ $app->group('/', function() use($app) {
 
     // Insert Jaxon codes in the page
     $app->get('/', function($request, $response) {
-        $jaxon = jaxon()->app();
-        // Display the page
+         // Display the page
         $view = Twig::fromRequest($request);
 
         return $view->render($response, 'demo/index.html.twig', [
-            'jaxonCss' => $jaxon->css(),
-            'jaxonJs' => $jaxon->js(),
-            'jaxonScript' => $jaxon->script(),
-            'pageTitle' => "Slim Framework Integration",
-            'appTest' => rq(AppTest::class),
+            'pageTitle' => "Slim Framework",
+            'rqAppTest' => rq(AppTest::class),
             'rqAppButtons' => rq(AppButtons::class),
-            'extTest' => rq(ExtTest::class),
+            'rqExtTest' => rq(ExtTest::class),
             'rqExtButtons' => rq(ExtButtons::class),
         ]);
     });

@@ -1,6 +1,6 @@
 <?php
 
-namespace Jaxon\Demo\Service;
+namespace Demo\Service;
 
 interface ExampleInterface
 {

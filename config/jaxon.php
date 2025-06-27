@@ -1,16 +1,20 @@
 <?php
 
-use Jaxon\Demo\Service\Example;
-use Jaxon\Demo\Service\ExampleInterface;
+use Demo\Service\Example;
+use Demo\Service\ExampleInterface;
 
 return [
     'app' => [
         'directories' => [
-            __DIR__ . '/ajax' => [
-                'namespace' => '\\Jaxon\\Demo\\Ajax',
-                'register' => false,
-                // 'separator' => '', // '.' or '_'
-                // 'protected' => [],
+            [
+                'path' => dirname(__DIR__) . '/ajax',
+                'namespace' => 'Demo\\Ajax',
+            ],
+        ],
+        'dialogs' => [
+            'default' => [
+                'modal' => 'bootbox',
+                'alert' => 'cute',
             ],
         ],
         'container' => [
@@ -38,14 +42,6 @@ return [
             ],
             'error' => [
                 'handle' => false,
-            ],
-        ],
-        'dialogs' => [
-            'libraries' => ['pgwjs'],
-            'default' => [
-                'modal' => 'tingle',
-                'message' => 'toastr',
-                'question' => 'noty',
             ],
         ],
         'js' => [

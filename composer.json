@@ -16,14 +16,14 @@
     "slim/slim": "4.*",
     "slim/psr7": "1.*",
     "slim/twig-view": "3.*",
-    "jaxon-php/jaxon-slim": "dev-main",
-    "jaxon-php/jaxon-dialogs": "dev-main",
-    "jaxon-php/jaxon-annotations": "dev-main"
+    "jaxon-php/jaxon-slim": "^5.0",
+    "jaxon-php/jaxon-dialogs": "^5.0",
+    "jaxon-php/jaxon-annotations": "^3.0"
   },
   "autoload": {
     "psr-4": {
-      "Jaxon\\Demo\\": "src/",
-      "Jaxon\\Demo\\Ajax\\": "jaxon/ajax/"
+      "Demo\\": "src/",
+      "Demo\\Ajax\\": "ajax/"
     }
   },
   "minimum-stability": "dev",

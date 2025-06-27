@@ -3,7 +3,7 @@ Jaxon Library for Slim
 
 Demo of the [Jaxon integration for the Slim framework](https://github.com/jaxon-php/jaxon-slim).
 
-The Jaxon classes are in the `jaxon/ajax` subdir.
+The Jaxon classes are in the `ajax` subdir.
 
 Installation
 ------------
