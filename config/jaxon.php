@@ -2,6 +2,7 @@
 
 use Demo\Service\Example;
 use Demo\Service\ExampleInterface;
+use Jaxon\Demo\Calc\Package as CalcPackage;
 
 return [
     'app' => [
@@ -24,6 +25,9 @@ return [
             'alias' => [
                 ExampleInterface::class => Example::class
             ],
+        ],
+        'packages' => [
+            CalcPackage::class => [],
         ],
     ],
     'lib' => [

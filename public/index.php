@@ -4,6 +4,7 @@ use Demo\Ajax\App\Test as AppTest;
 use Demo\Ajax\App\Buttons as AppButtons;
 use Demo\Ajax\Ext\Test as ExtTest;
 use Demo\Ajax\Ext\Buttons as ExtButtons;
+use Jaxon\Demo\Calc\Package as CalcPackage;
 use Jaxon\Exception\RequestException;
 use Jaxon\Slim\Helper;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -69,6 +70,7 @@ $app->group('/', function() use($app) {
             'rqAppButtons' => rq(AppButtons::class),
             'rqExtTest' => rq(ExtTest::class),
             'rqExtButtons' => rq(ExtButtons::class),
+            'calcPackage' => jaxon()->package(CalcPackage::class),
         ]);
     });
 })->add($jaxonConfigMiddleware);
