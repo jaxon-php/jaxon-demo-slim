@@ -1,14 +1,16 @@
 {% include 'demo/includes/header.html.twig' %}
 
     <div class="container-fluid">
-        <div class="row" style="margin-top:50px;">
-            <div class="col-sm-9 content">
-                <h3 class="page-header">{{ pageTitle }}</h3>
+        <div style="margin-top:50px;">
+            <h3 class="page-header">{{ pageTitle }}</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-5 offset-md-1 col-sm-12 content">
                 <div class="row">
                     <div class="col-md-12 mt-3" {{ jxnBind(rqAppTest) }}>
                         Initial content : {{ jxnHtml(rqAppTest) }}
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-5">
                         <select class="form-select" {{ jxnOn('change', rqAppTest.setColor(jq().val())) }}>
                             <option value="black" selected="selected">Black</option>
                             <option value="red">Red</option>
@@ -16,13 +18,13 @@
                             <option value="blue">Blue</option>
                         </select>
                     </div>
-                    <div class="col-md-9" {{ jxnBind(rqAppButtons) }}>
+                    <div class="col-7" {{ jxnBind(rqAppButtons) }}>
                     </div>
 
                     <div class="col-md-12 mt-3" {{ jxnBind(rqExtTest) }}>
                         Initial content : {{ jxnHtml(rqExtTest) }}
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-5">
                         <select class="form-select" {{ jxnOn('change', rqExtTest.setColor(jq().val())) }}>
                             <option value="black" selected="selected">Black</option>
                             <option value="red">Red</option>
@@ -30,30 +32,28 @@
                             <option value="blue">Blue</option>
                         </select>
                     </div>
-                    <div class="col-md-9" {{ jxnBind(rqExtButtons) }}>
+                    <div class="col-7" {{ jxnBind(rqExtButtons) }}>
                     </div>
                 </div>
             </div> <!-- class="content" -->
-        </div> <!-- class="row" -->
 
-        <div class="row" style="margin-top:50px;">
-            <div class="col-md-12">
-                <h4>Calculator</h4>
-            </div>
-            <div class="col-md-4">
-                {{ calcPackage.getHtml()|raw }}
+            <div class="col-md-5 col-sm-12 calculator">
+                <div class="mt-3">Calculator</div>
+
+                <div>
+                    {{ calcPackage.getHtml()|raw }}
+                </div>
             </div>
         </div> <!-- class="row" -->
     </div>
-<div id="jaxon-init">
-<script type='text/javascript'>
-    /* <![CDATA[ */
-    window.onload = function() {
-        {{ rqExtTest.sayHello(false)|raw }};
-        {{ rqAppTest.sayHello(false)|raw }};
-    }
-    /* ]]> */
-</script>
-</div>
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        window.onload = function() {
+            {{ rqExtTest.sayHello(false)|raw }};
+            {{ rqAppTest.sayHello(false)|raw }};
+        }
+        /* ]]> */
+    </script>
 
 {% include 'demo/includes/footer.html.twig' %}
