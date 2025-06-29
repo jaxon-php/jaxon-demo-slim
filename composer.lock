@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c9bd81c386498990b0ce987614d25ca",
+    "content-hash": "8c50241996112901cbdeb17028bd5c11",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -253,23 +253,22 @@
         },
         {
             "name": "jaxon-php/jaxon-demo-calc",
-            "version": "dev-main",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jaxon-php/jaxon-demo-calc.git",
-                "reference": "7bd8d1ca66d63a94435371df5113b7694ce400b8"
+                "reference": "ffd24bae24d83a57f6de4fc5775652d8db86e96a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jaxon-php/jaxon-demo-calc/zipball/7bd8d1ca66d63a94435371df5113b7694ce400b8",
-                "reference": "7bd8d1ca66d63a94435371df5113b7694ce400b8",
+                "url": "https://api.github.com/repos/jaxon-php/jaxon-demo-calc/zipball/ffd24bae24d83a57f6de4fc5775652d8db86e96a",
+                "reference": "ffd24bae24d83a57f6de4fc5775652d8db86e96a",
                 "shasum": ""
             },
             "require": {
                 "jaxon-php/jaxon-core": "^5.0",
                 "jaxon-php/jaxon-dialogs": "^5.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -298,7 +297,7 @@
                 "issues": "https://github.com/jaxon-php/jaxon-demo-calc/issues",
                 "source": "https://github.com/jaxon-php/jaxon-demo-calc"
             },
-            "time": "2025-06-27T22:44:37+00:00"
+            "time": "2025-06-29T02:57:17+00:00"
         },
         {
             "name": "jaxon-php/jaxon-dialogs",
@@ -1922,12 +1921,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "jaxon-php/jaxon-demo-calc": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }

@@ -47,6 +47,9 @@ $app->add(TwigMiddleware::create($app, $twig));
 
 // Process Jaxon ajax requests
 $app->group('/', function() use($app) {
+    // The URL for Jaxon requests.
+    $jaxonRoute = jaxon()->getOption('core.request.uri', '/jaxon');
+
     /**
      * Jaxon middleware to process ajax requests
      *
@@ -55,7 +58,7 @@ $app->group('/', function() use($app) {
     $jaxonAjaxMiddleware = fn(Request $request, RequestHandler $handler) =>
         jaxon()->psr()->ajax()->process($request, $handler);
 
-    $app->post('/jaxon', function($request, $response) {
+    $app->post($jaxonRoute, function($request, $response) {
         // Todo: return an error. Jaxon could not find a plugin to process the request.
     })->add($jaxonAjaxMiddleware);
 

@@ -35,7 +35,7 @@ return [
             'language' => 'en',
             'encoding' => 'UTF-8',
             'request' => [
-                'uri' => 'jaxon',
+                'uri' => '/jaxon',
             ],
             'prefix' => [
                 'class' => '',

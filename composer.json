@@ -19,7 +19,7 @@
     "jaxon-php/jaxon-slim": "^5.0",
     "jaxon-php/jaxon-dialogs": "^5.0",
     "jaxon-php/jaxon-annotations": "^3.0",
-    "jaxon-php/jaxon-demo-calc": "dev-main"
+    "jaxon-php/jaxon-demo-calc": "^1.0"
   },
   "autoload": {
     "psr-4": {
