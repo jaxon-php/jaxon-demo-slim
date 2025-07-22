@@ -22,7 +22,7 @@ class Test extends NodeComponent
     /**
      * @inheritDoc
      */
-    protected function after()
+    protected function after(): void
     {
         $text = $this->view()->render('test.hello', [
             'isCaps' => $this->stash()->get('is_caps', false),
