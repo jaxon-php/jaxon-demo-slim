@@ -73,7 +73,7 @@ $app->group('/', function() use($app) {
             'rqAppButtons' => rq(AppButtons::class),
             'rqExtTest' => rq(ExtTest::class),
             'rqExtButtons' => rq(ExtButtons::class),
-            'calcPackage' => jaxon()->package(CalcPackage::class),
+            'calcPackageClass' => CalcPackage::class,
         ]);
     });
 })->add($jaxonConfigMiddleware);

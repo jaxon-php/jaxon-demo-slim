@@ -172,16 +172,16 @@
         },
         {
             "name": "jaxon-php/jaxon-core",
-            "version": "v5.0.3",
+            "version": "v5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jaxon-php/jaxon-core.git",
-                "reference": "cc1035631bcbe86f934694c5719c3d980bb14b03"
+                "reference": "6fa640859ff7f2b22cf778eb0a5a471f3de40acd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jaxon-php/jaxon-core/zipball/cc1035631bcbe86f934694c5719c3d980bb14b03",
-                "reference": "cc1035631bcbe86f934694c5719c3d980bb14b03",
+                "url": "https://api.github.com/repos/jaxon-php/jaxon-core/zipball/6fa640859ff7f2b22cf778eb0a5a471f3de40acd",
+                "reference": "6fa640859ff7f2b22cf778eb0a5a471f3de40acd",
                 "shasum": ""
             },
             "require": {
@@ -249,7 +249,7 @@
                 "issues": "https://github.com/jaxon-php/jaxon-core/issues",
                 "source": "https://github.com/jaxon-php/jaxon-core"
             },
-            "time": "2025-07-22T14:09:25+00:00"
+            "time": "2025-07-23T14:05:58+00:00"
         },
         {
             "name": "jaxon-php/jaxon-demo-calc",
@@ -361,16 +361,16 @@
         },
         {
             "name": "jaxon-php/jaxon-slim",
-            "version": "v5.0.0",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jaxon-php/jaxon-slim.git",
-                "reference": "0a41cb703bab24e51c4ed58c28dc101e5a4ed72b"
+                "reference": "26aa3940939d68063be20ef306e7f0c7275354f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jaxon-php/jaxon-slim/zipball/0a41cb703bab24e51c4ed58c28dc101e5a4ed72b",
-                "reference": "0a41cb703bab24e51c4ed58c28dc101e5a4ed72b",
+                "url": "https://api.github.com/repos/jaxon-php/jaxon-slim/zipball/26aa3940939d68063be20ef306e7f0c7275354f7",
+                "reference": "26aa3940939d68063be20ef306e7f0c7275354f7",
                 "shasum": ""
             },
             "require": {
@@ -408,7 +408,7 @@
                 "issues": "https://github.com/jaxon-php/jaxon-slim/issues",
                 "source": "https://github.com/jaxon-php/jaxon-slim"
             },
-            "time": "2025-07-22T13:49:59+00:00"
+            "time": "2025-07-23T14:45:35+00:00"
         },
         {
             "name": "jaxon-php/jaxon-utils",
